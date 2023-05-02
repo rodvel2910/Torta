@@ -1,0 +1,364 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="utf-8">
+        <title>Prueba</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Open Sans', sans-serif;
+                margin: 0;
+            }
+                .no-margin {
+                    margin: 0 !important;
+                }
+            #wrapper_circulo_final {
+                /* background: url('recursos/circuloFinal.png'); */
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: center;
+                height: 1081px;
+                margin: auto;
+                max-height: 600px;
+                max-width: 600px;
+                position: relative;
+                width: 1081px;
+            }
+            #circulo_interno {
+                background: url('recursos/photo.png');
+                background-position: center;
+                background-size: cover;
+                bottom: 0;
+                border-radius: 50%;
+                height: 217px;
+                left: 0;
+                margin: auto;
+                right: 0;
+                position: absolute;
+                top: 0;
+                transform: translateX(-9px);
+                width: 217px;
+                z-index: 2;
+            }
+            .slice {
+                clip-path: polygon(40.212px 0.659px, 454.223px 185.249px, 6.878px 256.171px, 6.878px 256.171px, 6.155334px 252.655076px, 4.456672px 242.534328px, 2.486018px 226.449292px, 0.947376px 205.040504px, 0.54475px 178.9485px, 1.982144px 148.813816px, 5.963562px 115.276988px, 13.193008px 78.978552px, 24.374486px 40.559044px, 40.212px 0.65900000000004px);
+                height: 256px;
+                position: absolute;
+                transform: scale(.6);
+                transition: all .5s;
+                width: 450px;
+            }
+                .azul-oscuro {
+                    background: #2b4498;
+                }
+                .azul-claro {
+                    background: #3956a4;
+                }
+                .slice:hover {
+                    /* background: #f79721; */
+                    background: red;
+                    z-index: 1;
+                }
+                    .slice.hover {
+                        background: #f79721;
+                        /* background: red; */
+                    }
+                #slice1 {
+                    /* transform: scale(.555) rotate(34deg) translateX(42px) translateY(138px); */
+                    transform: scale(.555) rotate(34deg) translateX(9.6%) translateY(53%);
+                }
+                    #slice1:hover, #slice1.hover {
+                        /* transform: scale(.7) rotate(34deg) translateX(9px) translateY(94px); */
+                        transform: scale(.555) rotate(34.5deg) translateX(10px) translateY(127px);
+                    }
+                #slice2 {
+                    transform: scale(.555) rotate(67deg) translateX(105px) translateY(-40px);
+                }
+                    #slice2:hover, #slice2.hover {
+                        transform: scale(.555) rotate(67.5deg) translateX(73px) translateY(-44px);
+                    }
+                #slice3 {
+                    transform: scale(.555) rotate(100deg) translateX(61px) translateY(-224px);
+                }
+                    #slice3:hover, #slice3.hover {
+                        transform: scale(.555) rotate(100.5deg) translateX(29px) translateY(-226px);
+                    }
+                #slice4 {
+                    transform: scale(.555) rotate(133deg) translateX(-77px) translateY(-354px);
+                }
+                    #slice4:hover, #slice4.hover {
+                        transform: scale(.555) rotate(133deg) translateX(-109px) translateY(-357px);
+                    }
+                #slice5 {
+                    transform: scale(.555) rotate(166deg) translateX(-263px) translateY(-387px);
+                }
+                    #slice5:hover, #slice5.hover {
+                        transform: scale(.555) rotate(166deg) translateX(-295px) translateY(-392px);
+                    }
+                #slice6 {
+                    transform: scale(.555) rotate(199deg) translateX(-437px) translateY(-315px);
+                }
+                    #slice6:hover, #slice6.hover {
+                        transform: scale(.555) rotate(199deg) translateX(-469px) translateY(-315px);
+                    }
+                #slice7 {
+                    transform: scale(.555) rotate(232deg) translateX(-542px) translateY(-152px);
+                }
+                    #slice7:hover, #slice7.hover {
+                        transform: scale(.555) rotate(232deg) translateX(-574px) translateY(-159px);
+                    }
+                #slice8 {
+                    transform: scale(.555) rotate(265deg) translateX(-543px) translateY(35px);
+                }
+                    #slice8:hover, #slice8.hover {
+                        transform: scale(.555) rotate(265deg) translateX(-575px) translateY(31px);
+                    }
+                #slice9 {
+                    transform: scale(.555) rotate(298deg) translateX(-442px) translateY(192px);
+                }
+                    #slice9:hover, #slice9.hover {
+                        transform: scale(.555) rotate(298deg) translateX(-474px) translateY(188px);
+                    }
+                #slice10 {
+                    transform: scale(.555) rotate(331deg) translateX(-272px) translateY(269px);
+                }
+                    #slice10:hover, #slice10.hover {
+                        transform: scale(.555) rotate(331deg) translateX(-304px) translateY(269px);
+                    }
+                #slice11 {
+                    transform: scale(.555) rotate(362deg) translateX(-98px) translateY(245px);
+                }
+                    #slice11:hover, #slice11.hover {
+                        transform: scale(.555) rotate(362deg) translateX(-130px) translateY(245px);
+                    }
+            .slice-content {
+                color: white;
+                display: inline-block;
+                position: absolute;
+                text-align: center;
+                z-index: 2;
+                transition: all .5s;
+            }
+                .slice-content p {
+                    font-size: 14px;
+                }
+                #slice_content_1 {
+                    left: 100px;
+                    top: 144px;
+                }
+                    #slice_content_1.hover {
+                        left: 90px;
+                        top: 130px;
+                    }
+                    #slice_content_1 img {
+                        max-width: 30px;
+                    }
+                #slice_content_2 {
+                    left: 210px;
+                    top: 91px;
+                }
+                    #slice_content_2.hover {
+                        left: 208px;
+                        top: 73px;
+                    }
+                    #slice_content_2 img {
+                        margin-left: 5px;
+                        margin-top: 5px;
+                        max-width: 40px;
+                    }
+                #slice_content_3 {
+                    left: 299px;
+                    top: 91px;
+                }
+                    #slice_content_3.hover {
+                        left: 305px;
+                        top: 73px;
+                    }
+                    #slice_content_3 img {
+                        margin-left: -20px;
+                        margin-top: 5px;
+                        max-width: 60px;
+                    }
+                #slice_content_4 {
+                    left: 382px;
+                    top: 137px;
+                }
+                    #slice_content_4.hover {
+                        left: 399px;
+                        top: 123px;
+                    }
+                    #slice_content_4 img {
+                        margin-left: 20px;
+                        max-width: 60px;
+                    }
+                #slice_content_5 {
+                    left: 442px;
+                    top: 238px;
+                }
+                    #slice_content_5.hover {
+                        left: 460px;
+                        top: 238px;
+                    }
+                    #slice_content_5 img {
+                        margin-bottom: 5px;
+                        max-width: 40px;
+                    }
+                #slice_content_6 {
+                    left: 440px;
+                    top: 354px;
+                }
+                    #slice_content_6.hover {
+                        left: 448px;
+                        top: 359px;
+                    }
+                    #slice_content_6 img {
+                        margin-bottom: 5px;
+                        max-width: 40px;
+                    }
+                #slice_content_7 {
+                    left: 366px;
+                    top: 428px;
+                }
+                    #slice_content_7.hover {
+                        left: 375px;
+                        top: 447px;
+                    }
+                    #slice_content_7 img {
+                        margin-bottom: 10px;
+                        margin-left: -10px;
+                        max-width: 50px;
+                    }
+                #slice_content_8 {
+                    left: 253px;
+                    top: 444px;
+                }
+                    #slice_content_8.hover {
+                        left: 253px;
+                        top: 455px;
+                    }
+                    #slice_content_8 img {
+                        margin-bottom: 5px;
+                        max-width: 50px;
+                    }
+                #slice_content_9 {
+                    left: 127px;
+                    top: 393px;
+                }
+                    #slice_content_9.hover {
+                        left: 118px;
+                        top: 407px;
+                    }
+                    #slice_content_9 img {
+                        margin-left: 18px;
+                        max-width: 40px;
+                    }
+                #slice_content_10 {
+                    left: 83px;
+                    top: 342px;
+                }
+                    #slice_content_10.hover {
+                        left: 67px;
+                        top: 348px;
+                    }
+                    #slice_content_10 img {
+                        max-width: 30px;
+                    }
+                #slice_content_11 {
+                    left: 70px;
+                    top: 230px;
+                }
+                    #slice_content_11.hover {
+                        left: 43px;
+                        top: 230px;
+                    }
+                    #slice_content_11 img {
+                        max-width: 50px;
+                    }
+            @media (max-width: 600px) {
+                #wrapper_circulo_final {
+                    transform-origin: 50%;
+                    transform: scale(.7) translateX(-6%);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrapper_circulo_final">
+            <div id="circulo_interno"></div>
+            <div id="slice1" data-id="1" class="slice azul-oscuro"></div>
+            <div id="slice2" data-id="2" class="slice azul-claro"></div>
+            <div id="slice3" data-id="3" class="slice azul-oscuro"></div>
+            <div id="slice4" data-id="4" class="slice azul-claro"></div>
+            <div id="slice5" data-id="5" class="slice azul-oscuro"></div>
+            <div id="slice6" data-id="6" class="slice azul-claro"></div>
+            <div id="slice7" data-id="7" class="slice azul-oscuro"></div>
+            <div id="slice8" data-id="8" class="slice azul-claro"></div>
+            <div id="slice9" data-id="9" class="slice azul-oscuro"></div>
+            <div id="slice10" data-id="10" class="slice azul-claro"></div>
+            <div id="slice11" data-id="11" class="slice azul-oscuro"></div>
+            <div id="slice_content_1" data-id="1" class="slice-content">
+                <img src="recursos/Orthodontics.png" alt="">
+                <p class="no-margin"><b>Orthodontics</b></p>
+            </div>
+            <div id="slice_content_2" data-id="2" class="slice-content">
+                <p class="no-margin"><b>Family<br>Support</b></p>
+                <img src="recursos/family-support.png" alt="">
+            </div>
+            <div id="slice_content_3" data-id="3" class="slice-content">
+                <p class="no-margin"><b>Transportation<br>Assistance</b></p>
+                <img src="recursos/transportation.png" alt="">
+            </div>
+            <div id="slice_content_4" data-id="4" class="slice-content">
+                <img src="recursos/psychosocial-support.png" alt="">
+                <p class="no-margin"><b>Psychosocial<br>Support</b></p>
+            </div>
+            <div id="slice_content_5" data-id="5" class="slice-content">
+                <img src="recursos/nutrition.png" alt="">
+                <p class="no-margin"><b>Newborn<br>Nutrition</b></p>
+            </div>
+            <div id="slice_content_6" data-id="6" class="slice-content">
+                <img src="recursos/you.png" alt="">
+                <p class="no-margin"><b>YOU</b></p>
+            </div>
+            <div id="slice_content_7" data-id="7" class="slice-content">
+                <img src="recursos/surgery.png" alt="">
+                <p class="no-margin"><b>Surgery</b></p>
+            </div>
+            <div id="slice_content_8" data-id="8" class="slice-content">
+                <img src="recursos/speech-therapy.png" alt="">
+                <p class="no-margin"><b>Speech<br>Therapy</b></p>
+            </div>
+            <div id="slice_content_9" data-id="9" class="slice-content">
+                <img src="recursos/community-engagement.png" alt="">
+                <p class="no-margin"><b>Community<br>Engagement</b></p>
+            </div>
+            <div id="slice_content_10" data-id="10" class="slice-content">
+                <img src="recursos/hearing.png" alt="">
+                <p class="no-margin"><b>Hearing</b></p>
+            </div>
+            <div id="slice_content_11" data-id="11" class="slice-content">
+                <img src="recursos/Dental-Care.png" alt="">
+                <p class="no-margin"><b>Dental Care</b></p>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script>
+            $('.slice-content').hover(function() {
+                $('#slice'+$(this).attr('data-id')).addClass('hover')
+                $(this).addClass('hover')
+            }, function() {
+                $('#slice'+$(this).attr('data-id')).removeClass('hover')
+                $(this).removeClass('hover')
+            })
+            $('.slice').hover(function() {
+                $('#slice_content_'+$(this).attr('data-id')).addClass('hover')
+                $(this).addClass('hover')
+            }, function() {
+                $('#slice_content_'+$(this).attr('data-id')).removeClass('hover')
+                $(this).removeClass('hover')
+            })
+        </script>
+    </body>
+</html>
