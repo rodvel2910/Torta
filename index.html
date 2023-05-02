@@ -57,13 +57,14 @@
                     background: #3956a4;
                 }
                 .slice:hover {
-                    /* background: #f79721; */
-                    background: red;
+                    /* background: #f89721; */
+                    background: #ad3b25;
+                    cursor: pointer;
                     z-index: 1;
                 }
                     .slice.hover {
-                        background: #f79721;
-                        /* background: red; */
+                        /* background: #f79721; */
+                        background: #ad3b25;
                     }
                 #slice1 {
                     /* transform: scale(.555) rotate(34deg) translateX(42px) translateY(138px); */
@@ -98,10 +99,15 @@
                         transform: scale(.555) rotate(166deg) translateX(-295px) translateY(-392px);
                     }
                 #slice6 {
-                    transform: scale(.555) rotate(199deg) translateX(-437px) translateY(-315px);
+                    background: #f89721 !important;
+                    /* transform: scale(.555) rotate(199deg) translateX(-437px) translateY(-315px); */
+                    transform: scale(.555) rotate(199deg) translateX(-469px) translateY(-315px);
                 }
                     #slice6:hover, #slice6.hover {
-                        transform: scale(.555) rotate(199deg) translateX(-469px) translateY(-315px);
+                        /* transform: scale(.555) rotate(199deg) translateX(-469px) translateY(-315px); */
+                    }
+                    #slice6:hover, #slice6.hover {
+                        background: #f8c23f !important;
                     }
                 #slice7 {
                     transform: scale(.555) rotate(232deg) translateX(-542px) translateY(-152px);
@@ -141,6 +147,9 @@
                 z-index: 2;
                 transition: all .5s;
             }
+                .slice-content:hover {
+                    cursor: pointer;
+                }
                 .slice-content p {
                     font-size: 14px;
                 }
@@ -293,11 +302,11 @@
             <div id="slice4" data-id="4" class="slice azul-claro"></div>
             <div id="slice5" data-id="5" class="slice azul-oscuro"></div>
             <div id="slice6" data-id="6" class="slice azul-claro"></div>
-            <div id="slice7" data-id="7" class="slice azul-oscuro"></div>
-            <div id="slice8" data-id="8" class="slice azul-claro"></div>
-            <div id="slice9" data-id="9" class="slice azul-oscuro"></div>
-            <div id="slice10" data-id="10" class="slice azul-claro"></div>
-            <div id="slice11" data-id="11" class="slice azul-oscuro"></div>
+            <div id="slice7" data-id="7" class="slice azul-claro"></div>
+            <div id="slice8" data-id="8" class="slice azul-oscuro"></div>
+            <div id="slice9" data-id="9" class="slice azul-claro"></div>
+            <div id="slice10" data-id="10" class="slice azul-oscuro"></div>
+            <div id="slice11" data-id="11" class="slice azul-claro"></div>
             <div id="slice_content_1" data-id="1" class="slice-content">
                 <img src="recursos/Orthodontics.png" alt="">
                 <p class="no-margin"><b>Orthodontics</b></p>
@@ -346,19 +355,49 @@
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <script>
             $('.slice-content').hover(function() {
-                $('#slice'+$(this).attr('data-id')).addClass('hover')
-                $(this).addClass('hover')
+                if ($(this).attr('data-id') != 6) {
+                    $('#slice'+$(this).attr('data-id')).addClass('hover')
+                    $(this).addClass('hover')
+                }
             }, function() {
-                $('#slice'+$(this).attr('data-id')).removeClass('hover')
-                $(this).removeClass('hover')
+                if ($(this).attr('data-id') != 6) {
+                    $('#slice'+$(this).attr('data-id')).removeClass('hover')
+                    $(this).removeClass('hover')
+                }
             })
             $('.slice').hover(function() {
-                $('#slice_content_'+$(this).attr('data-id')).addClass('hover')
-                $(this).addClass('hover')
+                if ($(this).attr('data-id') != 6) {
+                    $('#slice_content_'+$(this).attr('data-id')).addClass('hover')
+                    $(this).addClass('hover')
+                }
             }, function() {
-                $('#slice_content_'+$(this).attr('data-id')).removeClass('hover')
-                $(this).removeClass('hover')
+                if ($(this).attr('data-id') != 6) {
+                    $('#slice_content_'+$(this).attr('data-id')).removeClass('hover')
+                    $(this).removeClass('hover')
+                }
             })
+            $('.slice').click(function() {
+                redirigir($(this).attr('data-id'))
+            })
+            $('.slice-content').click(function() {
+                redirigir($(this).attr('data-id'))
+            })
+            function redirigir(slice) {
+                var link = [
+                    'https://google.com.co',
+                    'https://github.com',
+                    'https://google.com.co',
+                    'https://google.com.co',
+                    'https://google.com.co',
+                    'https://google.com.co',
+                    'https://google.com.co',
+                    'https://google.com.co',
+                    'https://google.com.co',
+                    'https://google.com.co',
+                    'https://google.com.co'
+                ]
+                window.open(link[slice-1], '_blank').focus()
+            }
         </script>
     </body>
 </html>
