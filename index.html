@@ -401,26 +401,30 @@
                 }
             })
             $('.slice').click(function() {
+                console.log($(this).attr('data-id'))
                 redirigir($(this).attr('data-id'))
             })
             $('.slice-content').click(function() {
+                console.log($(this).attr('data-id'))
                 redirigir($(this).attr('data-id'))
             })
             function redirigir(slice) {
                 var link = [
-                    'https://google.com.co',
-                    'https://github.com',
-                    'https://google.com.co',
-                    'https://google.com.co',
-                    'https://google.com.co',
-                    'https://google.com.co',
-                    'https://google.com.co',
-                    'https://google.com.co',
-                    'https://google.com.co',
-                    'https://google.com.co',
-                    'https://google.com.co'
+                    'https://google.com.co', //Enlace Orthodontics
+                    'https://google.com.co', //Enlace Family support
+                    'https://google.com.co', //Enlace Transportation assistance
+                    'https://google.com.co', //Enlace Psychosocial support
+                    'https://google.com.co', //Enlace Newborn nutrition
+                    'https://google.com.co', //Enlace You
+                    'https://google.com.co', //Enlace Surgery
+                    'https://google.com.co', //Enlace Speech Therapy
+                    'https://google.com.co', //Enlace Community Engagement
+                    'https://google.com.co', //Enlace Hearing
+                    'https://google.com.co' //Enlace Dental care
                 ]
-                window.open(link[slice-1], '_blank').focus()
+                if (link[slice-1] != '') {
+                    window.open(link[slice-1], '_blank').focus()
+                }
             }
         </script>
     </body>
