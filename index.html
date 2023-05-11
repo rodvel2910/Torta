@@ -310,7 +310,7 @@
                     transform: scale(.7) translateX(-25%);
                 }
             }
-            @media (min-width: 375px) and (max-width: 375px) {
+            @media (min-width: 350px) and (max-width: 375px) {
                 #wrapper_circulo_final {
                     transform: scale(.7) translateX(-25%);
                 }
@@ -401,11 +401,9 @@
                 }
             })
             $('.slice').click(function() {
-                console.log($(this).attr('data-id'))
                 redirigir($(this).attr('data-id'))
             })
             $('.slice-content').click(function() {
-                console.log($(this).attr('data-id'))
                 redirigir($(this).attr('data-id'))
             })
             function redirigir(slice) {
