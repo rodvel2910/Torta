@@ -376,9 +376,9 @@
                 <p class="no-margin"><b>Dental Care</b></p>
             </div>
         </div>
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
         <script>
-            $('.slice-content').hover(function() {
+            /*$('.slice-content').hover(function() {
                 if ($(this).attr('data-id') != 6) {
                     $('#slice'+$(this).attr('data-id')).addClass('hover')
                     $(this).addClass('hover')
@@ -399,13 +399,47 @@
                     $('#slice_content_'+$(this).attr('data-id')).removeClass('hover')
                     $(this).removeClass('hover')
                 }
-            })
-            $('.slice').click(function() {
-                redirigir($(this).attr('data-id'))
-            })
-            $('.slice-content').click(function() {
-                redirigir($(this).attr('data-id'))
-            })
+            })*/
+            var slices = document.getElementsByClassName('slice')
+            var slices_content = document.getElementsByClassName('slice-content')
+            for (let i = 0; i < slices.length; i++) {
+                slices[i].onclick = function() {
+                    redirigir(slices[i].getAttribute('data-id'))
+                }
+                slices_content[i].onclick = function() {
+                    redirigir(slices[i].getAttribute('data-id'))
+                }
+                slices[i].onmouseover = function() {
+                    if (slices[i] != 6) {
+                        document.getElementById('slice_content_' + slices[i].getAttribute('data-id')).classList.add('hover')
+                        slices[i].classList.add('hover')
+                    }
+                }
+                slices_content[i].onmouseover = function() {
+                    if (slices[i] != 6) {
+                        document.getElementById('slice_content_' + slices[i].getAttribute('data-id')).classList.add('hover')
+                        slices[i].classList.add('hover')
+                    }
+                }
+                slices[i].onmouseout = function() {
+                    if (slices[i] != 6) {
+                        document.getElementById('slice_content_' + slices[i].getAttribute('data-id')).classList.remove('hover')
+                        slices[i].classList.remove('hover')
+                    }
+                }
+                slices_content[i].onmouseout = function() {
+                    if (slices[i] != 6) {
+                        document.getElementById('slice_content_' + slices[i].getAttribute('data-id')).classList.remove('hover')
+                        slices[i].classList.remove('hover')
+                    }
+                }
+            }
+            // $('.slice').click(function() {
+            //     redirigir($(this).attr('data-id'))
+            // })
+            // $('.slice-content').click(function() {
+            //     redirigir($(this).attr('data-id'))
+            // })
             function redirigir(slice) {
                 var link = [
                     'https://google.com.co', //Enlace Orthodontics
